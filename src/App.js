@@ -90,6 +90,50 @@ export default function App() {
         Your browser does not support the video tag.
       </video>
 
+      {/* Sparkle highlight over picture frame */}
+      <a
+        href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          position: "fixed",
+          top: "60px", // Fine-tuned to match the blue outline
+          left: "480px", // Fine-tuned to match the blue outline
+          width: "110px", // Fine-tuned to match the blue outline
+          height: "110px",
+          zIndex: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(255,255,255,0.08)",
+          borderRadius: "16px",
+          boxShadow: "0 0 24px 8px #fff7, 0 0 60px 20px #ffe06677",
+          border: "2px solid #ffe066",
+          cursor: "pointer",
+          transition: "box-shadow 0.3s",
+        }}
+        title="my photography hobby"
+      >
+        {/* Sparkle icon or animation */}
+        <img
+          src="/pixel-cat-4232985958.gif" // Replace with a sparkle gif or svg if you have one
+          alt="sparkle"
+          style={{
+            width: "60px",
+            height: "60px",
+            pointerEvents: "none",
+            filter: "drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffe066)",
+            animation: "spin 2s linear infinite"
+          }}
+        />
+        <style>{`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
+      </a>
+
       {/* Page content */}
       <div
         style={{

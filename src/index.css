@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+
+body, html {
+  cursor: none; /* Hide the default browser cursor */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Add to your CSS file (e.g., index.css) */
+.experience-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  border-radius: 12px;
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin-top: 100vh; /* Push it down below the initial view */
+}
+
+.experience-container h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffe066; /* Match your sparkle color */
+  text-shadow: 0 0 10px #ffe066;
+}
+
+.experience-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-left: 4px solid #ffe066;
+  transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateX(10px);
+}
+
+.experience-item h3 {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.experience-item .duration {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.experience-item .description {
+  line-height: 1.6;
 }

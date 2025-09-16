@@ -14,7 +14,7 @@ const Education = () => {
       institution: 'Baruch College, CUNY',
       degree: 'Bachelor of Business Administration in Computer Information Systems (Data Analytics Concentration)',
       year: '2021',
-      details: 'Graduated with 4.0 GPA',
+      details: 'Graduated with a 4.0 GPA and earned Dean’s List honors, the Peter F. Vallone Scholarship, and the Hugh Lamle Scholarship'
     },
   ];
 

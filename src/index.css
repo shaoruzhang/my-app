@@ -1,28 +1,113 @@
-src/index.css
+/* src/index.css */
 
-* {
-  cursor: none !important;
+body, html {
+  cursor: none;
+}
+
+/* --- Welcome Message Styles --- */
+.welcome-container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.welcome-text-h1 {
+  font-size: 2rem;
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #ffe066,
+    0 0 40px #ffe066,
+    0 0 80px #ffcc00;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.welcome-text-p {
+  margin-top: 20px;
+  font-size: 1.0rem;
+  text-shadow: 
+    0 0 6px #fff,
+    0 0 12px #ffe066,
+    0 0 24px #ffe066;
+  animation: pulseGlowSoft 3s infinite alternate;
+}
+
+/* --- Sparkle Links Styles --- */
+.sparkle-link {
+  position: fixed;
+  top: 60px;
+  left: 490px;
+  width: 95px;
+  height: 117px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 0 24px 8px #fff7, 0 0 60px 20px #ffe06677;
+  border: 2px solid #ffe066;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.sparkle-img {
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffe066);
+}
+
+.cat-sparkle-link {
+  position: fixed;
+  top: 65px;
+  left: 485px;
+  width: 100px;
+  height: 115px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 0 24px 8px #fff7, 0 0 60px 20px #ffe06677;
+  border: 2px solid #ffe066;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.cat-sparkle-img {
+  width: 75px;
+  height: 95px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffe066);
 }
 
 
-/* Add to your CSS file (e.g., index.css) */
+/* --- Experience & Education Sections --- */
 .experience-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px;
-  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
   font-family: 'Arial', sans-serif;
-  margin-top: 100vh; /* Push it down below the initial view */
+  margin-top: 100vh;
 }
 
 .experience-container h2 {
   font-size: 2.5em;
   text-align: center;
   margin-bottom: 30px;
-  color: #ffe066; /* Match sparkle color */
+  color: #ffe066;
   text-shadow: 0 0 10px #ffe066;
 }
 
@@ -30,11 +115,12 @@ src/index.css
   margin-bottom: 30px;
   padding: 20px;
   border-left: 4px solid #ffe066;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-item:hover {
   transform: translateX(10px);
+  box-shadow: 0 0 20px rgba(255, 224, 102, 0.5);
 }
 
 .experience-item h3 {
@@ -52,8 +138,7 @@ src/index.css
   line-height: 1.6;
 }
 
-/* src/index.css */
-
+/* --- Skills Section --- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -63,7 +148,7 @@ src/index.css
 
 .skill-category h3 {
   font-size: 1.5em;
-  color: #ffe066; /* Match your highlight color */
+  color: #ffe066;
   border-bottom: 1px solid #fff3;
   padding-bottom: 8px;
   margin-bottom: 12px;
@@ -83,52 +168,40 @@ src/index.css
   backdrop-filter: blur(5px);
 }
 
-/* src/index.css */
-
-.spotify-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10;
-  width: 60px; /* Small, discreet size */
-  height: 60px;
-  border-radius: 50%; /* Makes it a circle */
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: all 0.5s ease;
+/* --- Keyframes for Animations --- */
+@keyframes pulseGlow {
+  from {
+    text-shadow: 
+      0 0 10px #fff,
+      0 0 20px #ffe066,
+      0 0 40px #ffe066,
+      0 0 80px #ffcc00;
+  }
+  to {
+    text-shadow: 
+      0 0 20px #fff,
+      0 0 40px #ffe066,
+      0 0 60px #ffe066,
+      0 0 100px #ffcc00;
+  }
 }
 
-/* Styles for the button icon */
-.play-button-icon {
-  background-color: #1db954;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulse 2s infinite; /* Add a pulse animation */
+@keyframes pulseGlowSoft {
+  from {
+    text-shadow: 
+      0 0 6px #fff,
+      0 0 12px #ffe066,
+      0 0 24px #ffe066;
+  }
+  to {
+    text-shadow: 
+      0 0 12px #fff,
+      0 0 24px #ffe066,
+      0 0 48px #ffe066;
+  }
 }
 
-.play-button-icon:hover {
-  background-color: #1ed760;
-  animation: none;
-}
-
-.play-button-icon svg {
-  width: 50%;
-  height: 50%;
-  transition: transform 0.2s ease;
-}
-
-.play-button-icon:hover svg {
-  transform: scale(1.1);
-}
-
-/* Animation for the pulse effect */
-@keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(29, 185, 84, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(29, 185, 84, 0); }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

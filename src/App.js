@@ -1,9 +1,10 @@
+// src/App.js
 
 import React, { useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
-import Education from "./Education"; 
-import AboutMe from "./AboutMe"; 
+import Education from "./Education";
+import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import animatedCursor from "./assets/cursors/precision_select.gif";
 import Projects from "./Projects";
@@ -18,7 +19,6 @@ export default function App() {
     document.body.style.cursor = 'none';
 
     return () => {
-  
       document.body.style.cursor = 'auto';
     };
   }, []);
@@ -38,18 +38,17 @@ export default function App() {
 
   return (
     <>
-      {/* THIS ANIMATED CURSOR */}
       <img
         ref={customCursorRef}
-        src={animatedCursor} 
+        src={animatedCursor}
         alt="Animated Cursor"
         style={{
           position: "fixed",
           zIndex: 9999,
-          pointerEvents: "none", 
+          pointerEvents: "none",
           width: "40px",
           height: "40px",
-          transform: "translate(-50%, -50%)", // Centers the cursor
+          transform: "translate(-50%, -50%)",
           top: "-100px",
           left: "-100px",
         }}
@@ -108,14 +107,8 @@ export default function App() {
             filter: "drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffe066)",
           }}
         />
-        <style>{`
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}</style>
       </a>
- {/* Cat Instagram Link */}
+
       <a
         href="https://www.instagram.com/mippy_?igsh=YXY4MjJtcG9xZmk2&utm_source=qr"
         target="_blank"
@@ -123,7 +116,7 @@ export default function App() {
         style={{
           position: "fixed",
           top: "65px",
-          left: "485px", 
+          left: "485px",
           width: "100px",
           height: "115px",
           zIndex: 2,
@@ -140,7 +133,7 @@ export default function App() {
         title="My Cats' Instagram Page"
       >
         <img
-          src="/IMG_2030.jpg" 
+          src="/IMG_2030.jpg"
           alt="cat sparkle"
           style={{
             width: "75px",
@@ -149,91 +142,50 @@ export default function App() {
             filter: "drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffe066)",
           }}
         />
-        <style>{`
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}</style>
       </a>
 
       <div
-  style={{
-    position: "relative",
-    zIndex: 1,
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "white",
-    textAlign: "center",
-  }}
->
-  <h1
-    style={{
-      fontSize: "2rem",
-      textShadow: `
-        0 0 10px #fff,
-        0 0 20px #ffe066,
-        0 0 40px #ffe066,
-        0 0 80px #ffcc00
-      `,
-      animation: "pulseGlow 2s infinite alternate",
-    }}
-  >
-    Welcome to Sheryl's Cozy Web Space
-  </h1>
-  <p
-    style={{
-      marginTop: "20px",
-      fontSize: "1.0rem",
-      textShadow: `
-        0 0 6px #fff,
-        0 0 12px #ffe066,
-        0 0 24px #ffe066
-      `,
-      animation: "pulseGlowSoft 3s infinite alternate",
-    }}
-  >
-    Scroll, click, and discover more about me!
-  </p>
-
-  {/* Add CSS keyframes for glowing pulse */}
-  <style>{`
-    @keyframes pulseGlow {
-      from {
-        text-shadow: 
-          0 0 10px #fff,
-          0 0 20px #ffe066,
-          0 0 40px #ffe066,
-          0 0 80px #ffcc00;
-      }
-      to {
-        text-shadow: 
-          0 0 20px #fff,
-          0 0 40px #ffe066,
-          0 0 60px #ffe066,
-          0 0 100px #ffcc00;
-      }
-    }
-    @keyframes pulseGlowSoft {
-      from {
-        text-shadow: 
-          0 0 6px #fff,
-          0 0 12px #ffe066,
-          0 0 24px #ffe066;
-      }
-      to {
-        text-shadow: 
-          0 0 12px #fff,
-          0 0 24px #ffe066,
-          0 0 48px #ffe066;
-      }
-    }
-  `}</style>
-</div>
-
+        style={{
+          position: "relative",
+          zIndex: 1,
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "white",
+          textAlign: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "2rem",
+            textShadow: `
+              0 0 10px #fff,
+              0 0 20px #ffe066,
+              0 0 40px #ffe066,
+              0 0 80px #ffcc00
+            `,
+            animation: "pulseGlow 2s infinite alternate",
+          }}
+        >
+          Welcome to Sheryl's Cozy Web Space
+        </h1>
+        <p
+          style={{
+            marginTop: "20px",
+            fontSize: "1.0rem",
+            textShadow: `
+              0 0 6px #fff,
+              0 0 12px #ffe066,
+              0 0 24px #ffe066
+            `,
+            animation: "pulseGlowSoft 3s infinite alternate",
+          }}
+        >
+          Scroll, click, and discover more about me!
+        </p>
+      </div>
 
       <Canvas camera={{ position: [0, 0, 10] }}>
         <ambientLight />
@@ -241,14 +193,15 @@ export default function App() {
       </Canvas>
 
       <div style={{ position: "relative", zIndex: 1, paddingBottom: "100px" }}>
-        <AboutMe /> 
+        <AboutMe />
         <Skills />
-        <Education /> 
+        <Education />
         <Experience />
-        <Projects />   
-        <Contact />  
+        <Projects />
+        <Contact />
       </div>
-      <SpotifyPlayer /> 
+
+      <SpotifyPlayer />
     </>
   );
 }

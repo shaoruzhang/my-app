@@ -3,7 +3,6 @@
 import React from 'react';
 
 const SpotifyPlayer = () => {
-  // Add &theme=white to the end of your Spotify playlist URL
   const playlistUrl = "https://open.spotify.com/embed/artist/1eDIWVJt7ZWKsrXw5WVNsN?utm_source=generator"; 
   const containerStyle = {
     position: 'fixed',

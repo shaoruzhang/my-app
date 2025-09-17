@@ -14,12 +14,11 @@ import SpotifyPlayer from "./SpotifyPlayer";
 export default function App() {
   const customCursorRef = useRef(null);
 
-  // This useEffect forces the cursor to be hidden on the entire body
   useEffect(() => {
     document.body.style.cursor = 'none';
 
     return () => {
-      // Revert the cursor when the component unmounts
+  
       document.body.style.cursor = 'auto';
     };
   }, []);
@@ -141,7 +140,7 @@ export default function App() {
         title="My Cats' Instagram Page"
       >
         <img
-          src="\IMG_2030.jpg" // You can change this to a cat-specific GIF if you have one
+          src="\IMG_2030.jpg" 
           alt="cat sparkle"
           style={{
             width: "75px",

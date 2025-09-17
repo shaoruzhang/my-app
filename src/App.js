@@ -99,7 +99,7 @@ export default function App() {
         title="Photography Portfolio"
       >
         <img
-          src="\test2.gif"
+          src="/test2.gif"
           alt="sparkle"
           style={{
             width: "60px",

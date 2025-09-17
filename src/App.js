@@ -140,7 +140,7 @@ export default function App() {
         title="My Cats' Instagram Page"
       >
         <img
-          src="\IMG_2030.jpg" 
+          src="/IMG_2030.jpg" 
           alt="cat sparkle"
           style={{
             width: "75px",

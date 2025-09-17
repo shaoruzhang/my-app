@@ -1,8 +1,9 @@
 src/index.css
 
-body, html {
-  cursor: none; /* Hide the default browser cursor */
+* {
+  cursor: none !important;
 }
+
 
 /* Add to your CSS file (e.g., index.css) */
 .experience-container {
@@ -80,4 +81,54 @@ body, html {
   padding: 8px 12px;
   margin-bottom: 8px;
   backdrop-filter: blur(5px);
+}
+
+/* src/index.css */
+
+.spotify-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  width: 60px; /* Small, discreet size */
+  height: 60px;
+  border-radius: 50%; /* Makes it a circle */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+}
+
+/* Styles for the button icon */
+.play-button-icon {
+  background-color: #1db954;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite; /* Add a pulse animation */
+}
+
+.play-button-icon:hover {
+  background-color: #1ed760;
+  animation: none;
+}
+
+.play-button-icon svg {
+  width: 50%;
+  height: 50%;
+  transition: transform 0.2s ease;
+}
+
+.play-button-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Animation for the pulse effect */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(29, 185, 84, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(29, 185, 84, 0); }
 }

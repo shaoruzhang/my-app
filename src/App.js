@@ -8,22 +8,30 @@ import Skills from "./Skills";
 import animatedCursor from "./assets/cursors/precision_select.gif";
 import Projects from "./Projects";
 import Contact from "./Contact";
+import SpotifyPlayer from "./SpotifyPlayer";
+
 
 export default function App() {
   const customCursorRef = useRef(null);
 
+  // This useEffect forces the cursor to be hidden on the entire body
+  useEffect(() => {
+    document.body.style.cursor = 'none';
+
+    return () => {
+      // Revert the cursor when the component unmounts
+      document.body.style.cursor = 'auto';
+    };
+  }, []);
+
   useEffect(() => {
     const handleMouseMove = (event) => {
-      // Position the <img> to follow the mouse's coordinates
       if (customCursorRef.current) {
-        // Adjust the "-10px" values to center the image
         customCursorRef.current.style.left = `${event.clientX - 10}px`;
         customCursorRef.current.style.top = `${event.clientY - 10}px`;
       }
     };
-
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -74,10 +82,10 @@ export default function App() {
         rel="noopener noreferrer"
         style={{
           position: "fixed",
-          top: "60px",
-          left: "490px",
-          width: "95px",
-          height: "117px",
+          top: "100px",
+          left: "615px",
+          width: "60px",
+          height: "75px",
           zIndex: 2,
           display: "flex",
           alignItems: "center",
@@ -115,10 +123,10 @@ export default function App() {
         rel="noopener noreferrer"
         style={{
           position: "fixed",
-          top: "86px",
-          left: "700px", // Adjusted position to be next to the first link
-          width: "120px",
-          height: "95px",
+          top: "65px",
+          left: "485px", 
+          width: "100px",
+          height: "115px",
           zIndex: 2,
           display: "flex",
           alignItems: "center",
@@ -136,8 +144,8 @@ export default function App() {
           src="\IMG_2030.jpg" // You can change this to a cat-specific GIF if you have one
           alt="cat sparkle"
           style={{
-            width: "90px",
-            height: "80px",
+            width: "75px",
+            height: "95px",
             pointerEvents: "none",
             filter: "drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffe066)",
           }}
@@ -241,6 +249,7 @@ export default function App() {
         <Projects />   
         <Contact />  
       </div>
+      <SpotifyPlayer /> 
     </>
   );
 }
